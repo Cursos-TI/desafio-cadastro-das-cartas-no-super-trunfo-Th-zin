@@ -1,74 +1,43 @@
 
+#  Super Trunfo - Comparador de Cidades em C
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam as propriedades das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países," onde você comparará as propriedades das cidades.
-
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
-
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior. Você deve escolher qual desafio quer realizar.
-
-### 🚨 Atenção: 
-O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções scanf para ler os dados e printf para exibi-los.
-
-## 🎮 Nível Novato
-
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades. 
-
-Cada país será dividido em oito estados, identificados pelas letras de A a H. Cada estado terá quatro cidades, numeradas de 1 a 4. A combinação da letra do estado e o número da cidade define o código da carta (por exemplo, A01, A02, B01, B02).
-
-### 🚩 Objetivo:
-- Criar cartas representando cidades, contendo as seguintes propriedades:
-  - **População**
-  - **Área**
-  - **PIB**
-  - **Número de pontos turísticos**
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema permitirá ao usuário cadastrar cartas de cidades, inserindo manualmente os dados via terminal de comando.
-- Após o cadastro, o sistema exibirá os dados de cada cidade de forma clara e organizada.
-
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere os dados de cada carta interativamente.
-- Após o cadastro, os dados são exibidos com todas as propriedades da cidade, uma por linha.
+Projeto desenvolvido em linguagem C para simular uma disputa no estilo **Super Trunfo**, utilizando dados demográficos e econômicos de cidades brasileiras. O sistema permite a exibição das cartas e a escolha dinâmica de dois atributos para realizar a comparação e determinar a cidade vencedora.
 
 ---
 
-## 🛡️ Nível Aventureiro
+##  Funcionalidades
 
-No nível Aventureiro, você expandirá o sistema para incluir propriedades calculadas, permitindo uma análise mais detalhada das cartas.
-
-### 🆕 Diferença em relação ao Nível Novato:
-- **Novas Propriedades Calculadas:**
-  - **Densidade Populacional:** População dividida pela área da cidade.
-  - **PIB per Capita:** PIB total dividido pela população.
-
-### ⚙️ Funcionalidades do Sistema:
-- O sistema agora calculará automaticamente a Densidade Populacional e o PIB per Capita com base nos dados inseridos.
-- Essas novas propriedades serão adicionadas às informações exibidas para cada cidade.
-
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário continua inserindo os dados de cada carta interativamente.
-- O sistema exibirá os dados, incluindo as novas propriedades calculadas, de forma clara e organizada.
+- **Exibição de Cartas:** Apresenta dados detalhados das cidades cadastrais (Estado, Código, População, Área, PIB, Pontos Turísticos e cálculo automático da Densidade Demográfica).
+- **Menu Dinâmico:** Interface via terminal para seleção do 1º e do 2º atributo de comparação (impedindo a repetição da mesma opção).
+- **Lógica de Comparação Customizada:**
+  - Para a **Densidade Demográfica**, a regra é invertida: **o menor valor vence**.
+  - Para os demais atributos (População, Área, PIB, Pontos Turísticos), **o maior valor vence**.
+- **Cálculo de Pontuação Total:** Soma os valores dos dois atributos escolhidos para cada carta e define a vencedora ou se houve empate.
 
 ---
 
-## 🏆 Nível Mestre
+##  Tecnologias Utilizadas
 
-No nível Mestre, você implementará comparações entre as cartas, utilizando operadores relacionais e manipulando grandes números com precisão.
-
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Comparação de Cartas:**
-  - O sistema permitirá ao usuário comparar duas cartas com base nas propriedades inseridas e calculadas.
-  - Cada carta terá um "Super Poder", que é a soma de todas as propriedades.
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema utilizará operadores relacionais para determinar a carta vencedora com base nas propriedades comparadas.
-- A comparação considerará:
-  - **Densidade Populacional:** Vence a carta com menor valor.
-  - **Outras Propriedades:** Vence a carta com maior valor.
-- O resultado das comparações será exibido claramente para cada propriedade.
-
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere as cartas a serem comparadas.
-- O sistema exibe os resultados das comparações, indicando a carta vencedora para cada propriedade.
+- **Linguagem:** C (padrão C99 ou superior)
+- **Compilador Recomendado:** GCC / Clang
+- **Biblioteca Padrão:** `<stdio.h>`
 
 ---
+
+##  Estrutura do Código
+
+| Função | Descrição |
+| :--- | :--- |
+| `exibirCarta()` | Imprime os dados estruturados de uma carta/cidade no terminal. |
+| `exibirMenu()` | Exibe as opções de atributos disponíveis, ocultando o atributo já selecionado. |
+| `compararAtributos()` | Retorna a comparação individual entre dois valores com base nas regras do jogo. |
+| `main()` | Gerencia os dados das cartas, fluxo do menu, leitura de entradas (`scanf`), soma e exibição dos resultados. |
+
+---
+
+##  Como Executar o Projeto
+
+### Pré-requisitos
+Certifique-se de ter um compilador C instalado em seu sistema (como GCC no Linux/macOS ou MinGW no Windows).
+
+
