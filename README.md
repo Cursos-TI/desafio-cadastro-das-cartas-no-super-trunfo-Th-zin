@@ -75,5 +75,3 @@ No nível Mestre, você implementará comparações entre as cartas, utilizando 
 - O sistema exibe os resultados das comparações, indicando a carta vencedora para cada propriedade.
 
 ---
-
-Equipe de Ensino - MateCheck
